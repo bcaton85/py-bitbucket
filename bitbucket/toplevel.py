@@ -57,7 +57,7 @@ class BitBucket(object):
     error = response.reason
 
     # 200-299: OK.
-    if status_code / 100 == 2:
+    if int(status_code / 100) == 2:
       try:
         return (True, json.loads(text or ''), None)
       except TypeError:
